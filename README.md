@@ -43,10 +43,10 @@ For greater flexibility you can pass an input element and an output element wher
 ```
 
 
-If the input has a GPS value in it, it will preselect that on the map:
+If the input has a GPS value in it, it will preselected that on the map:
 
 ```js
-<input type="text" id="location" value="">
+<input type="text" id="location" value="47.486980809455176,19.046259276129007">
 ```
 
 ## Live examples
