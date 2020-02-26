@@ -7,15 +7,15 @@
  *
  * @class
  *
- * @param {string} selector - The HTML element ID of the input element.
  * @param {Object} settings - Configuration.
- * @param {Object} settings.View - The default GPS and zoom the map should show when there is nothing else to show.
- * @param {Object|Array} settings.View.latLng - Latitude and longitude coordinates in Leaflet LatLng object or array form.
- * @param {Integer} settings.View.zoom - The Leaflet map's zoom level.
- * @param {Boolean} settings.readOnly - Input element readOnly attribute.
- * @param {String} settings.display - CSS display value for the input element.
+ * @param {string} settings.selector - The HTML element ID of the input element.
+ * @param {string} settings.inputElement - The HTML element of the input element.
+ * @param {string} settings.mapElement - The HTML element of the map element.
+ * @param {Object} settings.defaultView - The default GPS and zoom the map should show when there is nothing else to show.
+ * @param {Object|Array} settings.defaultView.latLng - Latitude and longitude coordinates in Leaflet LatLng object or array form.
+ * @param {Integer} settings.defaultView.zoom - The Leaflet map's zoom level..
  */
-function OsmPicker(selector, settings) {
+function OsmPicker(settings) {
 
 	/**
 	 * The input element we will turn into a picker.
@@ -58,26 +58,26 @@ function OsmPicker(selector, settings) {
 	 */
 	function _initialize() {
 		// Default settings.
-		settings.defaultView = settings.View || {};
+		settings = settings || {};
+		settings.defaultView = settings.defaultView || {};
 		settings.defaultView.latLng = settings.defaultView.latLng || L.latLng(47.4953, 19.0645);
 		settings.defaultView.zoom = settings.defaultView.zoom || 14;
-		settings.readOnly = (settings.readOnly === true);
 
 		// Configure input element.
-		_inputElement = document.getElementById(selector);
-		_inputElement.readOnly = settings.readOnly;
-		if (settings.display) {
-			_inputElement.style.display = settings.display;
+		_inputElement = settings.inputElement || document.getElementById(settings.selector);
+
+		// Create map element and leaflet map
+		if (settings.mapElement) {
+			_mapElement = settings.mapElement
+			_map = L.map(_mapElement);
+		} else {
+			_mapElement =  document.createElement('div');
+			_mapElement.id = settings.selector + '-osm-picker';
+			_mapElement.style = 'height:300px;cursor:crosshair;';
+			_insertAfter(_mapElement, _inputElement);
+			_map = L.map(settings.selector + '-osm-picker');
 		}
 
-		// Create map element.
-		_mapElement = document.createElement('div');
-		_mapElement.id = selector + '-osm-picker';
-		_mapElement.style = 'height:300px;cursor:crosshair;';
-		_insertAfter(_mapElement, _inputElement);
-
-		// Create Leaflet map on map element.
-		_map = L.map(selector + '-osm-picker');
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(_map);

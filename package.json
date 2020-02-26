@@ -1,0 +1,28 @@
+{
+  "name": "osm-picker",
+  "version": "1.0.0",
+  "description": "Small library that turns an input field into a GPS picker using only Leaflet with OSM data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify": "uglifyjs src/osmpicker.js --output ./dist/osmpicker.js --compress --mangle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dekvidet/osm-picker.git"
+  },
+  "keywords": [
+    "osm",
+    "gps",
+    "picker"
+  ],
+  "author": "totymedli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dekvidet/osm-picker/issues"
+  },
+  "homepage": "https://github.com/dekvidet/osm-picker#readme",
+  "devDependencies": {
+    "uglify-js": "^3.8.0"
+  }
+}

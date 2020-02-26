@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic OSM Picker Demo</title>
+        <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet">
+    </head>
+    <body>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+        <script src="../src/osmpicker.js"></script>
+
+        <h2>Preselect from input value</h2>
+        <input type="text" id="location" value="47.486980809455176,19.046259276129007">
+
+        <script>
+            new OsmPicker({ selector: 'location' });
+        </script>
+    </body>
+</html>
+ 
