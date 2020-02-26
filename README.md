@@ -6,13 +6,13 @@ This project doesn't try to be exhaustive in providing a library that can be use
 
 ## Demo
 
-![OSM picker preview](preview.png)
+![OSM picker preview](preview.gif)
 
 ## Example usage
 
 After you included Leaflet and this library, just create an input element with an id and call the lib on it:
 
-```
+```js
 <input type="text" id="location">
 <script>
   new OsmPicker({
@@ -27,7 +27,7 @@ After you included Leaflet and this library, just create an input element with a
 
 For greater flexibility you can pass an input element and an output element where the map should be rendered:
 
-```
+```js
 <input type="text" id="location">
 <div id="location-map" style="height:300px;cursor:crosshair;"></div>
 <script>
@@ -45,15 +45,15 @@ For greater flexibility you can pass an input element and an output element wher
 
 If the input has a GPS value in it, it will preselect that on the map:
 
-```
+```js
 <input type="text" id="location" value="">
 ```
 
 ## Live examples
 
-- [Id based example](/demos/id.html)
-- [Element based example](/demos/element.html)
-- [Preselect example](/demos/preselect.html)
+- [Id based example](https://dekvidet.github.io/osm-picker/demos/id.html)
+- [Element based example](https://dekvidet.github.io/osm-picker/demos/element.html)
+- [Preselect example](https://dekvidet.github.io/osm-picker/demos/preselect.html)
 
 ## License
 
