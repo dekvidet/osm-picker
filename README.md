@@ -8,7 +8,7 @@ This project doesn't try to be exhaustive in providing a library that can be use
 
 ## Install
 
-Include Leaflet JS&CSS and the [minified](dist/omspicker.min.js) or [unminfied version of `osmpicker.js`](src/osmpicker.js)
+Include Leaflet JS&CSS and the [minified](dist/osmpicker.min.js) or [unminfied version of `osmpicker.js`](src/osmpicker.js)
 
 ```html
 <head>
