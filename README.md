@@ -4,13 +4,25 @@ Small library that turns an input field into a GPS picker using only [Leaflet](h
 
 This project doesn't try to be exhaustive in providing a library that can be used everywhere. The goal is to provide a nice, easy to understand library boilerplate that you can modify to create a customized one for your own use.
 
-## Demo
-
 ![OSM picker preview](preview.gif)
 
-## Example usage
+## Install
 
-After you included Leaflet and this library, just create an input element with an id and call the lib on it:
+Include Leaflet JS&CSS and the [minified](dist/omspicker.min.js) or [unminfied version of `osmpicker.js`](src/osmpicker.js)
+
+```html
+<head>
+  <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet">
+</head>
+<body>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="osmpicker.js"></script>
+</body>
+```
+
+## Usage
+
+Create an input element with an id and call the lib on it:
 
 ```js
 <input type="text" id="location">
